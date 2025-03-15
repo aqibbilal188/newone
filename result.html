@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Diet Plan</title>
+    <link rel="stylesheet" href="result.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Personalized Diet Plan</h1>
+        <p id="user-info"></p>
+        <p>Here’s a meal plan for you:</p>
+        <ul id="meal-list"></ul>
+        <a href="webpage.html">Go Back</a>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const age = parseInt(urlParams.get('age'));
+        const weight = parseInt(urlParams.get('weight'));
+        const height = parseInt(urlParams.get('height'));
+        const goal = urlParams.get('goal') ? urlParams.get('goal').toLowerCase().trim() : "";
+
+        document.getElementById("user-info").innerText = `Name: ${name} | Age: ${age} | Weight: ${weight} kg | Height: ${height} cm | Goal: ${goal}`;
+
+        // Diet Plans for All Ages
+        const dietPlans = [
+            // Kids (1-17)
+            { minAge: 1, maxAge: 17, meals: [
+                "🥣 Breakfast: Milk & Cereal",
+                "🥗 Lunch: Rice, Lentils & Vegetables",
+                "🍎 Snacks: Fruit & Yogurt",
+                "🥘 Dinner: Whole Wheat Roti with Paneer"
+            ]},
+
+            // Adults (18-30) - Weight Loss
+            { minAge: 18, maxAge: 30, minWeight: 40, maxWeight: 80, goal: "weight loss", meals: [
+                "🍓 Breakfast: Oats with Fruits",
+                "🥗 Lunch: Grilled Chicken & Salad",
+                "🥜 Snacks: Nuts & Green Tea",
+                "🥘 Dinner: Steamed Vegetables & Grilled Fish"
+            ]},
+
+            // Adults (18-30) - Muscle Gain
+            { minAge: 18, maxAge: 30, minWeight: 50, maxWeight: 100, goal: "muscle gain", meals: [
+                "🍳 Breakfast: Scrambled Eggs & Whole Wheat Toast",
+                "🥩 Lunch: Grilled Chicken with Brown Rice",
+                "🥤 Snacks: Protein Shake & Banana",
+                "🥘 Dinner: Salmon & Steamed Broccoli"
+            ]},
+
+            // Adults (18-30) - General Health
+            { minAge: 18, maxAge: 30, minWeight: 40, maxWeight: 100, goal: "general health", meals: [
+                "🥑 Breakfast: Avocado Toast with Poached Egg",
+                "🥗 Lunch: Quinoa & Roasted Vegetables",
+                "🍌 Snacks: Greek Yogurt with Honey",
+                "🥘 Dinner: Lentil Soup & Whole Wheat Roti"
+            ]},
+
+            // Middle Age (31-50)
+            { minAge: 31, maxAge: 50, meals: [
+                "🥞 Breakfast: Whole Wheat Pancakes & Berries",
+                "🥗 Lunch: Lean Meat with Vegetables",
+                "🍎 Snacks: Apple & Nuts",
+                "🥘 Dinner: Stir-fried Vegetables & Chicken"
+            ]},
+
+            // Seniors (51+)
+            { minAge: 51, maxAge: 100, meals: [
+                "🥣 Breakfast: Soft Oatmeal with Honey",
+                "🥗 Lunch: Vegetable Soup & Whole Grain Bread",
+                "🍐 Snacks: Banana or Soft Fruits",
+                "🥘 Dinner: Light Steamed Vegetables & Rice"
+            ]}
+        ];
+
+        // Find the correct diet plan
+        let selectedPlan = dietPlans.find(plan => 
+            age >= plan.minAge && age <= plan.maxAge &&
+            (!plan.goal || goal.includes(plan.goal)) &&
+            (!plan.minWeight || (weight >= plan.minWeight && weight <= plan.maxWeight)) &&
+            (!plan.minHeight || (height >= plan.minHeight && height <= plan.maxHeight))
+        );
+
+        // Display the selected meal plan
+        if (selectedPlan) {
+            document.getElementById("meal-list").innerHTML = selectedPlan.meals.map(meal => `<li>${meal}</li>`).join("");
+        } else {
+            document.getElementById("meal-list").innerHTML = "<li>No suitable diet plan found.</li>";
+        }
+    </script>
+</body>
+</html>

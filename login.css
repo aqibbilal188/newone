@@ -1,0 +1,165 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset & General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Transparent Navbar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(0, 0, 0, 0.2); /* Transparent effect */
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+.logo {
+    color: #ff9800;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff9800;
+}
+
+/* Background */
+.background {
+    background: url('cook9') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px; /* To adjust for navbar height */
+}
+
+/* Glassmorphism Login Box */
+.login-container {
+    background: rgba(0, 0, 0, 0.5); /* Dark Transparent */
+    backdrop-filter: blur(12px);
+    padding: 40px;
+    width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(255, 165, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Headings */
+h2 {
+    color: #ff9800;
+    font-size: 26px;
+}
+
+p {
+    color: #f8f5f2;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Login Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #d35400; /* Warm orange */
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #e67e22;
+    box-shadow: 0 4px 10px rgba(255, 165, 0, 0.4);
+}
+
+/* Register Link */
+.register-link {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.register-link a {
+    color: #ff9800;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+    .login-container {
+        width: 90%;
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-direction: column;
+    }
+}

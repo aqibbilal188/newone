@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Diet & Workout Planner</title>
+    <link rel="stylesheet" href="web.css">
+</head>
+<body>
+
+    <!-- Navigation Bar (Transparent & Stylish) -->
+    <nav>
+        <div class="logo">SmartBites</div>
+        <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#personal-training">Personal Training</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="logout.html" class="logout-btn">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section (Dark Theme Background) -->
+    <header class="hero">
+        <h1>Plan Your Perfect Meal & Workout</h1>
+        <p>Let AI guide you to a healthier lifestyle.</p>
+        <a href="#diet-form-section" class="btn">Get Started</a>
+    </header>
+
+    <!-- About Section -->
+    <section id="diet-form-section">
+        <div class="form-container">
+            <h2>Get Your AI-Powered Plan</h2>
+            <form id="dietForm">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                    <input type="number" id="age" placeholder="Enter your age" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" id="weight" placeholder="Enter your weight (kg)" required>
+                    <input type="number" id="height" placeholder="Enter your height (cm)" required>
+                </div>
+                <input type="text" id="goal" placeholder="Your Goal (e.g., Weight Loss, Muscle Gain)" required>
+                <button type="button" onclick="redirectToResult()">Get My Plan</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Form Section (Centered in a Stylish Box) -->
+
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li><strong>🔹 Personalized Meal Plans:</strong> AI-driven nutrition tailored to your needs.</li>
+            <li><strong>🔹 Custom Workout Routines:</strong> Science-based fitness plans for all levels.</li>
+            <li><strong>🔹 Calorie & Macro Tracking:</strong> Monitor your food intake with ease.</li>
+            <li><strong>🔹 Progress Monitoring:</strong> Track your weight loss or muscle gain over time.</li>
+        </ul>
+    </section>
+
+    <!-- Personal Training Section -->
+    <section id="personal-training">
+        <h2>Personal Training</h2>
+        <h3>ALEX</h3>
+        <p>Our certified trainers provide one-on-one coaching to help you achieve your fitness goals faster.</p>
+        <div class="trainer-grid">
+            <div class="trainer">
+                <img src="DALL·E 2025-03-14 09.47.35 - A professional fitness trainer posing confidently in a modern gym setting. The trainer is wearing athletic wear and has a friendly and motivational ex.webp" alt="Trainer">
+                <p>Expert in muscle building & strength training.</p>
+                <h4>ALEXSA</h4>
+            </div>
+            <div class="trainer">
+                <img src="DALL·E 2025-03-14 09.52.20 - A fit and attractive female personal trainer in a modern gym setting. She has a confident smile, toned physique, and is wearing stylish athletic wear.webp" alt="Trainer">
+                <p>Specialist in weight loss & endurance workouts.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>📧 Email: <a href="jakijaki112@gmail.com">jakijaki112@gmail.com</a></p>
+        <p>📞 Phone: +1 (234) 567-890</p>
+        <p>📍 Address: 123 AI Fitness Street, New York, USA</p>
+    </section>
+
+    <script>
+        function redirectToResult() {
+            const name = document.getElementById("name").value;
+            const age = document.getElementById("age").value;
+            const weight = document.getElementById("weight").value;
+            const height = document.getElementById("height").value;
+            const goal = document.getElementById("goal").value;
+
+            if (name && age && weight && height && goal) {
+                window.location.href = `result.html?name=${encodeURIComponent(name)}&age=${age}&weight=${weight}&height=${height}&goal=${encodeURIComponent(goal)}`;
+            } else {
+                alert("Please fill all the fields.");
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+    

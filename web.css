@@ -1,0 +1,202 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Transparent Navbar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff5100;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff5100;
+}
+
+/* Hero Section */
+.hero {
+    background: url('dark.webp') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 50px;
+    color: #ff5e00;
+}
+
+.hero p {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 20px;
+    color: white;
+    background: #fc6603;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ff6600;
+}
+
+/* Sections */
+section {
+    padding: 60px;
+    margin-top: 20px;
+}
+/* Form Section */
+#diet-form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #0d0d0d; /* Dark background */
+}
+
+/* Form Container (Glassmorphism Effect) */
+.form-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+/* Form Title */
+.form-container h2 {
+    font-size: 26px;
+    color: #f88d00;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.form-group input {
+    flex: 1;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Submit Button */
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #ffffff;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.form-container button:hover {
+    background: #ff7b00;
+    box-shadow: 0 4px 12px rgba(13, 202, 240, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .form-group {
+        flex-direction: column;
+    }
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    border-radius: 12px;
+}
+/* Goal Input Field */
+#goal {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 7px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
+#goal::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+}
+
+/* Hover & Focus Effects */
+#goal:hover, 
+#goal:focus {
+    border-color: #f88d00;
+    box-shadow: 0 0 8px rgba(255, 136, 0, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+}
+

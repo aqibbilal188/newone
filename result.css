@@ -1,0 +1,95 @@
+/* Dark Background with Glassmorphism */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #1c1c1c, #252525); /* Dark gradient background */
+}
+
+/* Glassmorphism Container */
+.container {
+    width: 60%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(255, 165, 0, 0.2);
+}
+
+/* Heading */
+h1 {
+    font-size: 26px;
+    color: #f07b0d;
+    margin-bottom: 15px;
+}
+
+/* User Info */
+#user-info {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+/* Meal Plan List */
+#meal-list {
+    list-style: none;
+    padding: 0;
+}
+
+#meal-list li {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: 0.3s ease-in-out;
+}
+
+#meal-list li:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* Back Button */
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: #ff9100;
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #f17501;
+    text-shadow: 0px 0px 8px rgba(255, 145, 0, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    #user-info {
+        font-size: 16px;
+    }
+
+    #meal-list li {
+        font-size: 16px;
+    }
+}
+
